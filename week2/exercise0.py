@@ -66,7 +66,7 @@ def shout(a_string):
     or in any of the million places that google will give you.
     "python make a string uppercase" is a good starting search query.
     """
-    the_answer = (a_string.upper)
+    the_answer = (a_string.upper())
 
     return the_answer
 
@@ -78,7 +78,9 @@ def really_shout(a_string):
     from above.
     Look up how to 'concatinate' strings to make this happen.
     """
-    the_answer = (a_string.upper) + "!"
+    x = (a_string.upper())
+    y = "!"
+    the_answer = (a_string.upper()) + "!"
 
     return the_answer
 
@@ -91,7 +93,7 @@ def shout_with_a_number(a_string, a_number):
 
     HINT: Lookup how to cast a_number to a string or lookup how to use string formatting in python
     """
-    the_answer = (a_string.upper, 42)
+    the_answer = (a_string.upper() + "!" + str(a_number))
 
     return the_answer
 
