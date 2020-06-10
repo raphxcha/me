@@ -13,18 +13,19 @@ print("hello! Let's get started")  # it printed "hello! Let's get started"
 
 some_words = ['what', 'does', 'this', 'line', 'do', '?']
 
-# I think this will print "word" by calling the print function.
+# I think this will print each word from the list above by calling the print function.
 for word in some_words:
-    print(word)
+    print(word) #it printed the list of words each time you execute print
 
-# I think this will print "x" by calling the print function.
+# I think this will print each word from the list above by calling the print function.
 for x in some_words:
-    print(x)
+    print(x) # did the exact same thing as line 17 and 18
 
+# I think this will print the list
 print(some_words)
 
-# I think this will print "('some_words contains more than 3 words')" by calling the print function.
-if len(some_words) > 3:
+# I think this will print no. 4, 5 and 6 by calling the print function.
+if len(some_words) > 3: # It printed 6 because this is larger than 3.
     print('some_words contains more than 3 words')
 
 def usefulFunction():
