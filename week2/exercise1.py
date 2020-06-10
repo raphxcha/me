@@ -13,14 +13,17 @@ print("hello! Let's get started")  # it printed "hello! Let's get started"
 
 some_words = ['what', 'does', 'this', 'line', 'do', '?']
 
+# I think this will print "word" by calling the print function.
 for word in some_words:
     print(word)
 
+# I think this will print "x" by calling the print function.
 for x in some_words:
     print(x)
 
 print(some_words)
 
+# I think this will print "('some_words contains more than 3 words')" by calling the print function.
 if len(some_words) > 3:
     print('some_words contains more than 3 words')
 
