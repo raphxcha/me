@@ -8,7 +8,7 @@ linter with no errors or warnings!
 
 import string
 
-det getLetter(index):
+det get Letter(index):
     alphabet = string.ascii_lowercase + " "
     return alphabet(index]
 
