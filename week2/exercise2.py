@@ -19,7 +19,7 @@ def week2exersise2():
     wordArray[0] = wordArray[0].upper()
     wordArray[1] = wordArray[1].upper()
     wordArray[3] = wordArray[3].upper()
-    secret_word ="".join(WordArray)
+    secret_word ="".join(wordArray)
     print(secret_word)
     return secret_word
 
