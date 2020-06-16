@@ -73,6 +73,7 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
+    
     string_list_a = ['*'] * 10
     return string_list_a * 10
 
