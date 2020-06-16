@@ -191,8 +191,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
+wedge = []
+for i in range(10):
+    across = [] 
+    for j  in range(i + 1):
+        across.append(j)
+    wedge.append(across)
+return wedge
 
-    return None
 
 
 def loops_7():
