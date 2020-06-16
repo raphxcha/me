@@ -193,13 +193,13 @@ def loops_6():
     TIP: look out for the starting condition.
     """
 
-wedge = []
-for i in range(10):
-    across = [] 
-    for j in range(i + 1):
-        across.(str(j))
-    wedge = (across)
-return wedge
+    wedge = []
+    for i in range(10):
+        across = [] 
+        for j in range(i + 1):
+            across.(str(j))
+        wedge = (across)
+    return wedge
 
 
 
