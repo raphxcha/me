@@ -126,13 +126,13 @@ def loops_4():
     ]
     """
     list1 = []
-    for a  in range(10):
+    for a in range(10):
         list2 = [] 
         for aa in range(10):
             list2.append(str(aa))
         list1.append(list2)
     return list1
-    
+
 
 
 def loops_5():
@@ -159,7 +159,14 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+
+    lista = []
+    for a in range(10):
+        listb = []
+        for aa in range(5):
+            listb.append("(" + "i" + str(a) + "," + " " + "j" + str(aa) + ")") 
+        lista.append(listb)
+    return lista
 
 
 def loops_6():
