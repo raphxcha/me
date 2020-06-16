@@ -191,6 +191,7 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
+
 wedge = []
 for i in range(10):
     across = [] 
@@ -198,6 +199,7 @@ for i in range(10):
         across.append(j)
     wedge.append(across)
 return wedge
+
 
 def loops_7():
     """Make a pyramid.
