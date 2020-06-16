@@ -223,7 +223,7 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    
+
     spaces = 4 
     pyramid = []
     for i in range(5):
