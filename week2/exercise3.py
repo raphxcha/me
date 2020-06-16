@@ -163,12 +163,14 @@ def loops_5():
     you'll come to see the pros and cons of each over time.
     """
     lista = []
+    listb = []
     for a in range(10):
-        listb = []
         for aa in range(5):
-            listb.append("(" + "i" + str(a) + "," + " " + "j" + str(aa) + ")")
-        lista.append(listb)
-    return lista
+            lista.append("(" + "i" + str(a) + "," + " " + "j" + str(aa) + ")")
+        listb.append(lista)
+        lista = []
+    return listb
+   
 
 
 def loops_6():
@@ -222,17 +224,22 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
+    spaces = 4
+    ra = [" "]*9
+    rb = 3
+    rc = 5
+    rd = []
+    ela = 9
+    for a in range (5):
+        ra[4]=""
+        rb = rb + 1
+        rc = rc - 1
+        ra[(rb)]=" "
+        ra[(rc)]=""
+        rd = rd + ra
 
-    spaces = 4 
-    pyramid = []
-    pyramid_line = []
-    for i in range(5):
-        stars = stars = 9 - (2 * spaces)
-        pyramid_line.append([' '] * (spaces) * ['*'] * (spaces) * [' '] * (spaces))
-        pyramid.append(pyramid_line)
-        spaces = spaces - 1
-    return pyramid
-
+    finalstring = [rd[index : index + ela]for index in range(0, len(rd), ela)]
+    print (finalstring)
 
 
 def lp(some_kind_of_list, exercise_name):
