@@ -73,7 +73,7 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    
+
     string_list_a = ['*'] * 10
     return string_list_a * 10
 
@@ -99,7 +99,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    lista = []
+    for i in range(0,10):
+        listb = []
+        for ii in range(10):
+            listb.append(str(i))
+        lista.append(listb)
+    return lista
 
 
 def loops_4():
