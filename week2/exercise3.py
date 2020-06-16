@@ -194,13 +194,10 @@ def loops_6():
 wedge = []
 for i in range(10):
     across = [] 
-    for j  in range(i + 1):
+    for j in range(i + 1):
         across.append(j)
     wedge.append(across)
 return wedge
-
-
-
 
 def loops_7():
     """Make a pyramid.
