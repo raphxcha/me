@@ -1,2 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
-Learnt how to use visual studio code for the first time! However, installing instructuions were not clear for me until extra help from peers were provided. However I'd prefer more help in regards to using and exploring visual studio code.
+Learnt how to use visual studio code for the first time! How ever, installing instructions were not clear for me until I got extra help from peers. How ever I'd prefer more help in regards to using and exploring visual studio code.
