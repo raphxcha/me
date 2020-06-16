@@ -162,7 +162,6 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-
     lista = []
     for a in range(10):
         listb = []
@@ -170,7 +169,6 @@ def loops_5():
             listb.append("(" + "i" + str(a) + "," + " " + "j" + str(aa) + ")")
         lista.append(listb)
     return lista
-    
 
 
 def loops_6():
@@ -229,8 +227,8 @@ def loops_7():
     pyramid = []
     pyramid_line = []
     for i in range(5):
-        stars = stars = 9 - (2 * space)
-        pyramid_line = ([' '] * spaces * ['*'] * spaces * [' '] * spaces)
+        stars = stars = 9 - (2 * spaces)
+        pyramid_line.append([' '] * (spaces) * ['*'] * (spaces) * [' '] * (spaces))
         pyramid.append(pyramid_line)
         spaces = spaces - 1
     return pyramid
