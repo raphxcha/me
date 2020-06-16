@@ -230,16 +230,17 @@ def loops_7():
     rc = 5
     rd = []
     ela = 9
-    for a in range (5):
-        ra[4]=""
+    for x in range (5):
+        ra[4]="*"
         rb = rb + 1
         rc = rc - 1
-        ra[(rb)]=" "
-        ra[(rc)]=""
+        ra[(rb)]="*"
+        ra[(rc)]="*"
         rd = rd + ra
 
     finalstring = [rd[index : index + ela]for index in range(0, len(rd), ela)]
-    print (finalstring)
+    return finalstring
+
 
 
 def lp(some_kind_of_list, exercise_name):
