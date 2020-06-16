@@ -164,9 +164,10 @@ def loops_5():
     for a in range(10):
         listb = []
         for aa in range(5):
-            listb.append("(" + "i" + str(a) + "," + " " + "j" + str(aa) + ")") 
+            listb.append("(" + "i" + str(a) + "," + " " + "j" + str(aa) + ")")
         lista.append(listb)
     return lista
+
 
 
 def loops_6():
