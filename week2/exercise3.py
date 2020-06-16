@@ -171,6 +171,7 @@ def loops_5():
         lista.append(listb)
     return lista
 
+
 def loops_6():
     """Make a wedge of numbers.
 
@@ -196,7 +197,7 @@ wedge = []
 for i in range(10):
     across = [] 
     for j in range(i + 1):
-        across.append(j)
+        across.(str(j))
     wedge = (across)
 return wedge
 
