@@ -170,6 +170,7 @@ def loops_5():
             listb.append("(" + "i" + str(a) + "," + " " + "j" + str(aa) + ")")
         lista.append(listb)
     return lista
+    
 
 
 def loops_6():
@@ -197,10 +198,9 @@ def loops_6():
     for i in range(10):
         across = [] 
         for j in range(i + 1):
-            across.(str(j))
+            across.append(j)
         wedge = (across)
     return wedge
-
 
 
 def loops_7():
@@ -227,9 +227,10 @@ def loops_7():
 
     spaces = 4 
     pyramid = []
+    pyramid_line = []
     for i in range(5):
         stars = stars = 9 - (2 * space)
-        pyramid_line - ([' '] * spaces * ['*'] = stars + [' '] * spaces)
+        pyramid_line = ([' '] * spaces * ['*'] * spaces * [' '] * spaces)
         pyramid.append(pyramid_line)
         spaces = spaces - 1
     return pyramid
