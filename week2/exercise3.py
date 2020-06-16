@@ -34,7 +34,7 @@ def fix_it(moves=True, should_move=True):
         return "Duct Tape"
     if not moves and should_move:
         return "WD-40"
-        
+
 
 
 def loops_1a():
@@ -171,8 +171,6 @@ def loops_5():
         lista.append(listb)
     return lista
 
-
-
 def loops_6():
     """Make a wedge of numbers.
 
@@ -193,6 +191,7 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
+
     return None
 
 
