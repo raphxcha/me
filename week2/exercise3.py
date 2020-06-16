@@ -197,8 +197,9 @@ for i in range(10):
     across = [] 
     for j in range(i + 1):
         across.append(j)
-    wedge.append(across)
+    wedge = (across)
 return wedge
+
 
 
 def loops_7():
@@ -222,7 +223,15 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    spaces = 4 
+    pyramid = []
+    for i in range(5):
+        stars = stars = 9 - (2 * space)
+        pyramid_line - ([' '] * spaces * ['*'] = stars + [' '] * spaces)
+        pyramid.append(pyramid_line)
+        spaces = spaces - 1
+    return pyramid
+    
 
 
 def lp(some_kind_of_list, exercise_name):
