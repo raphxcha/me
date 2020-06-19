@@ -26,7 +26,11 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    the_numbers = []
+        [i for i in range(5) for _ in range(3)]
+    [0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]
+    return the_numbers
+
 
 
 def two_step_ranger(start, stop):
