@@ -57,7 +57,7 @@ def stubborn_asker(low, high):
     Look up the docs for input
     """
     import random
-    number = random.randit(30, 45)
+    number = random.randint(1, 50)
     guesses = 0
     print('Guess number between 1-50: ')
     while guesses < 50:
