@@ -60,20 +60,20 @@ def stubborn_asker(low, high):
 
     number = random.randint(low, high)
     numberone = random.randint(low, high)
-    guess = 0
     noguess = 1
     
     while noguess == 1:
         guess = int(input('Take a guess: '))
-        if number < numberone:
-            print('The number is higher.')
         if number > numberone:
+            print('The number is higher.')
+            numberone = numberone + 1
+        if number < numberone:
             print('The number is lower.')
-        if guess == number:
+            numberone = numberone - 1
+        if number == numberone:
             guesses = str(guesses)
             print('You guessed correct.')
             return numberone
-
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
