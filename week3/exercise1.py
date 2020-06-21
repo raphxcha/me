@@ -57,7 +57,7 @@ def stubborn_asker(low, high):
     Look up the docs for input
     """
     import random
-    number = random.randit(1, 50)
+    number = random.randit(30, 45)
     guesses = 0
     print('Guess number between 1-50: ')
     while guesses < 50:
@@ -81,6 +81,7 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
+    
 def super_asker(low, high):
     """Robust asking function.
 
