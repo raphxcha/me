@@ -43,7 +43,7 @@ def two_step_ranger(start, stop):
     """
     the_numbers = []
     while start < stop:
-        numbers.append(start)
+        the_numbers.append(start)
         start = start + 2
     return the_numbers
 
@@ -81,9 +81,6 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    import random
-    number = 
-
 def super_asker(low, high):
     """Robust asking function.
 
