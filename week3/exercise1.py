@@ -66,8 +66,8 @@ def stubborn_asker(low, high):
     if guess == number:
         guesses = str(guesses)
         print('You guessed correctly')
-    return guesses
-    
+    return guesses6
+
 
 
 def not_number_rejector(message):
