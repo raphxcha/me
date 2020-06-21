@@ -29,7 +29,7 @@ def lone_ranger(start, stop, step):
     """
     the_numbers = []
     while start < stop:
-        numbers.append(start)
+        the_numbers.append(start)
         start = start + step
     return the_numbers
 
