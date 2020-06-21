@@ -81,6 +81,15 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
+    number = 1
+    while number == 1:
+         word = input("Please enter a number, and not a word: ")
+            if word.isalpha() == True:
+                 break
+            else:
+                 print("You did not enter a number")
+                 number = number + 1
+
     
 def super_asker(low, high):
     """Robust asking function.
