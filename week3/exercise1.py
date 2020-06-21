@@ -70,8 +70,6 @@ def stubborn_asker(low, high):
         if number > numberone:
             print('The number is lower.')
         if guess == number:
-            break
-        if guess == number:
             guesses = str(guesses)
             print('You guessed correct.')
         return numberone
