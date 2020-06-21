@@ -21,6 +21,7 @@ def loop_ranger(start, stop=None, step=1):
     return  the_numbers
 
 
+
 def lone_ranger(start, stop, step):
     """Duplicate the functionality of range.
 
@@ -50,7 +51,23 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+    import random
+    number = random.randit(1, 50)
+    guesses = 0
+    print('Guess number between 1-50: ')
+    while guesses < 50:
+        guess = int(input('Take a guess: '))
+        if guess < number:
+            print('The number is higher.')
+        if guess > number:
+            print('The number is lower.')
+        if guess == number: 
+            break
+    if guess == number:
+        guesses = str(guesses)
+        print('You guessed correctly')
+    return guesses
+    
 
 
 def not_number_rejector(message):
