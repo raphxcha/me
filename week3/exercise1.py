@@ -60,10 +60,10 @@ def stubborn_asker(low, high):
 
     number = random.randint(low, high)
     numberone = random.randint(low, high)
+    guess = 0
     noguess = 1
     
     while noguess == 1:
-        guess = int(input('Take a guess: '))
         if number > numberone:
             print('The number is higher.')
             numberone = numberone + 1
