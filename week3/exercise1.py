@@ -28,8 +28,9 @@ def lone_ranger(start, stop, step):
     Look up the docs for range() and wrap it in a 1:1 way
     """
     the_numbers = []
-        [i for i in range(5) for _ in range(3)]
-    [0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4]
+    while start < stop:
+        numbers.append(start)
+        start = start +step
     return the_numbers
 
 
@@ -67,7 +68,7 @@ def stubborn_asker(low, high):
         guesses = str(guesses)
         print('You guessed correct.')
     return guesses
-    
+
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
@@ -76,7 +77,7 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    required_number=input("Insert a number: ")
+    required_number=input("Ask for a number.")
     while required_number != 18
         print("Oops! Something is wrong")
         required_number=input("Try again: ")
