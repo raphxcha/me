@@ -30,7 +30,7 @@ def lone_ranger(start, stop, step):
     the_numbers = []
     while start < stop:
         numbers.append(start)
-        start = start +step
+        start = start + step
     return the_numbers
 
 
@@ -41,7 +41,11 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    the_numbers = []
+    while start < stop:
+        numbers.append(start)
+        start = start + 2
+    return the_numbers
 
 
 def stubborn_asker(low, high):
