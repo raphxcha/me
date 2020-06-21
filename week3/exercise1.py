@@ -66,7 +66,7 @@ def stubborn_asker(low, high):
     if guess == number:
         guesses = str(guesses)
         print('You guessed correctly')
-    return guesses6
+    return guesses
 
 
 
