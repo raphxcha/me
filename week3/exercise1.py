@@ -67,8 +67,7 @@ def stubborn_asker(low, high):
         guesses = str(guesses)
         print('You guessed correct.')
     return guesses
-
-
+    
 
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
