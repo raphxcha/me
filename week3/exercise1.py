@@ -65,7 +65,7 @@ def stubborn_asker(low, high):
             break
     if guess == number:
         guesses = str(guesses)
-        print('You guessed correctly')
+        print('You guessed correct.')
     return guesses
 
 
