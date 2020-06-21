@@ -61,7 +61,7 @@ def stubborn_asker(low, high):
             print('The number is higher.')
         if guess > number:
             print('The number is lower.')
-        if guess == number: 
+        if guess == number:
             break
     if guess == number:
         guesses = str(guesses)
@@ -77,7 +77,12 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    required_number=input("Insert a number: ")
+    while required_number != 18
+        print("Oops! Something is wrong")
+        required_number=input("Try again: ")
+    if required_number == '18'
+        print("That's right!")
 
 
 def super_asker(low, high):
