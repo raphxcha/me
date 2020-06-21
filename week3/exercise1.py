@@ -60,7 +60,6 @@ def stubborn_asker(low, high):
 
     number = random.randint(low, high)
     numberone = random.randint(low, high)
-    guess = 0
     noguess = 1
     
     while noguess == 1:
@@ -71,7 +70,6 @@ def stubborn_asker(low, high):
             print('The number is lower.')
             numberone = numberone - 1
         if number == numberone:
-            guesses = str(guesses)
             print('You guessed correct.')
             return numberone
 
