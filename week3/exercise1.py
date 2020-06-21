@@ -81,13 +81,8 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    required_number=input("Ask for a number.")
-    while required_number = required_number
-        print("Oops! Something is wrong")
-        required_number=input("Try again: ")
-    if required_number == '18'
-        print("That's right!")
-
+    import random
+    number = 
 
 def super_asker(low, high):
     """Robust asking function.
