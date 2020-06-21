@@ -82,7 +82,7 @@ def not_number_rejector(message):
     When you do get a number, return it.
     """
     required_number=input("Ask for a number.")
-    while required_number != 18
+    while required_number = required_number
         print("Oops! Something is wrong")
         required_number=input("Try again: ")
     if required_number == '18'
