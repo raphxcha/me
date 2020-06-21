@@ -57,21 +57,24 @@ def stubborn_asker(low, high):
     Look up the docs for input
     """
     import random
-    number = random.randint(1, 50)
-    guesses = 0
-    print('Guess number between 1-50: ')
-    while guesses < 50:
+
+    number = random.randint(low, high)
+    numberone = random.randint(low, high)
+    guess = 0
+    noguess = 1
+    
+    while noguess == 1:
         guess = int(input('Take a guess: '))
-        if guess < number:
+        if number < numberone:
             print('The number is higher.')
-        if guess > number:
+        if number > numberone:
             print('The number is lower.')
         if guess == number:
             break
     if guess == number:
         guesses = str(guesses)
         print('You guessed correct.')
-    return guesses
+        return numberone
 
 
 def not_number_rejector(message):
@@ -81,14 +84,7 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    number = 1
-    while number == 1:
-         word = input("Please enter a number, and not a word: ")
-            if word.isalpha() == True:
-                 break
-            else:
-                 print("You did not enter a number")
-                 number = number + 1
+    
 
     
 def super_asker(low, high):
