@@ -33,8 +33,9 @@ def advancedGuessingGame():
     upperBound = int(upperBound) 
 
     realnum = random.randint(0, upperBound)
-
+    wronginput = ValueError
     guessed = False
+    wrongnumber = 
 
     while not guessed:
         guessedNumber = int(input("Guess a number: "))
@@ -46,7 +47,9 @@ def advancedGuessingGame():
             print("Too small, try again :'(")
         else:
             print("Too big, try again :'(")
-        if 
+        if wronginput:
+            print("This response is invalid, try again: ")
+    
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
