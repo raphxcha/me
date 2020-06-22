@@ -38,8 +38,6 @@ def binary_search(low, high, actual_number):
         else: 
             return mid 
   
-    return -1
-   
     tries = 0
     guess = 0
     return {"guess": guess, "tries": tries}
