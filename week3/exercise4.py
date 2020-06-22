@@ -23,9 +23,23 @@ def binary_search(low, high, actual_number):
     Use the VS Code debugging tools a lot here. It'll make understanding 
     things much easier.
     """
-    
-    
-    
+    arr = [ 2, 3, 4, 10, 40 ] 
+    x = 10
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+  
+    while low <= high: 
+        mid = (high + low) // 2
+        if arr[mid] < x: 
+            low = mid + 1
+        elif arr[mid] > x: 
+            high = mid - 1
+        else: 
+            return mid 
+  
+    return -1
+   
     tries = 0
     guess = 0
     return {"guess": guess, "tries": tries}
