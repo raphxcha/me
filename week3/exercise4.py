@@ -23,23 +23,20 @@ def binary_search(low, high, actual_number):
     Use the VS Code debugging tools a lot here. It'll make understanding 
     things much easier.
     """
-    if high >= low: 
-  
-        mid = (high + low) // 2
-  
-        # If element is present at the middle itself 
-        if arr[mid] == x: 
-            return mid 
-  
-        # If element is smaller than mid, then it can only 
-        # be present in left subarray 
-        elif arr[mid] > x: 
-            return binary_search(arr, low, mid - 1, x) 
-  
-        # Else the element can only be present in right subarray 
-        else: 
-            return binary_search(arr, mid + 1, high, x) 
-  
+    start = time.time()
+    low = 0
+    high = len(data) - 1
+    while low <= high:
+         actual_number = (low + high) // 2
+
+        if item < data[actual_number]:
+            high = middle - 1
+        elif item > data[actual_number]:
+            low = actual_number + 1
+        else:
+            end = time.time()
+            return actual_number, end-start
+
     tries = 0
     guess = 0
     return {"guess": guess, "tries": tries}
