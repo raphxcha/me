@@ -31,8 +31,22 @@ def advancedGuessingGame():
     upperBound = input("Enter an upper bound: ")
     print("OK then, a number between 0 and {} ?".format(upperBound))
     upperBound = int(upperBound) 
-    
 
+    realnum = random.randint(0, upperBound)
+
+    guessed = False
+
+    while not guessed:
+        guessedNumber = int(input("Guess a number: "))
+        print("You guessed {},".format(guessedNumber),)
+        if guessedNumber == realnum:
+            print("You got it!! It was {}".format(realnum))
+            guessed = True
+        elif guessedNumber < realnum:
+            print("Too small, try again :'(")
+        else:
+            print("Too big, try again :'(")
+        if 
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
