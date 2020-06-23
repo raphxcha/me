@@ -29,8 +29,32 @@ def advancedGuessingGame():
     print("\nI'm thinking of a number between 1 and 100.")
     upperBound = int(upperBound)
     lowerBound = int(lowerBound)
-    actualnumber = random.randint(lowerBound, upperBound)
+    realnum = random.randint(lowerBound, upperBound)
     guessed = False
+
+    while not guessed:
+        a = False
+        while a != True:
+            guessed = input("Guess a number: ")
+            try:
+                int(guessed)
+                answer = True
+            except ValueError:
+                answer = False
+                print("Invalid Response - Integer Only, try again: ")
+            print("You guessed {},".format(realnum))
+            if int(guessed) == realnum:
+                print("It was {}!".format(realnum))
+                guessed = True
+            elif int(guessed) < realnum and int(guessed) > lowerBound:
+                print("Too low!")
+            elif int(guessed) > realnum and int(guessed) < upperBound:
+                print("Too high!")
+            elif int(guessed) < lowerBound:
+                print("That's still too low!")
+            elif int(guessed) > upperBound:
+                print("That's still too low!")
+
     x = False
     z = ValueError
 
@@ -72,7 +96,7 @@ def advancedGuessingGame():
             print("Too small, try again :'(")
         else:
             print("Too big, try again :'(")
-        if wronginput:
+        if z:
             print("This response is invalid, try again: ")
     
     return "You got it!"
