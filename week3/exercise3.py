@@ -27,17 +27,42 @@ def advancedGuessingGame():
     """
     print("\nWelcome to the guessing game!")
     print("\nI'm thinking of a number between 1 and 100.")
-    print("Try to guess it in five tries or less")
-    upperBound = input("Enter an upper bound: ")
-    print("OK then, a number between 0 and {} ?".format(upperBound))
-    upperBound = int(upperBound) 
-
-    realnum = random.randint(0, upperBound)
-    wronginput = ValueError
+    upperBound = int(upperBound)
+    lowerBound = int(lowerBound)
+    actualnumber = random.randint(lowerBound, upperBound)
     guessed = False
-    wrongnumber = 
+    x = False
+    z = ValueError
 
-    while not guessed:
+    while x == False:
+        y = False
+        while y != True:
+            lowerBound = input("Guess a smaller number: ")
+            try:
+                int(lowerBound)
+                y = True
+            except z:
+                print("Invalid Response - Integer Only, try again: ")
+                y = False
+            y1 = False
+            while y1 != True:
+                upperBound = input("Guess a higher number: ")
+                if upperBound > lowerBound:
+                    try:
+                        int(upperBound)
+                        x = True
+                        y1 = True
+                    except z:
+                        print("Invalid Response - Integer Only, try again: ")
+                        upperBound = input("Guess a higher number: ")
+                        y1 = False
+                    else:
+                        print("Guess lower, not higher!")
+                        y1 = False
+                print("Guess a number between" + str(lowerBound) + "and" + str(upperBound))
+
+        
+
         guessedNumber = int(input("Guess a number: "))
         print("You guessed {},".format(guessedNumber),)
         if guessedNumber == realnum:
