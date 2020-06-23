@@ -28,12 +28,16 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    if moves == True and should_move == True:
-        return "No problem"
-    if moves == True and should_move == False:
-        return "Duct Tape"
-    if not moves and should_move:
-        return "WD-40"
+    if moves == True:
+        if should_move == True:
+            return("No problem")
+        elif should_move == False:
+            return("Duct Tape")
+    elif moves == False:
+        if should_move == True:
+            return("WD-40")
+        elif should_move == False:
+            return("No Problem")
 
 
 
@@ -76,9 +80,15 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
+    star = []
+    rows = []
 
-    string_list_a = ['*'] * 10
-    return string_list_a * 10
+    for d in range(10):
+        rows.append("*")
+
+    for e in range(10):
+        star.append(rows)
+    return star
 
 
 def loops_3():
@@ -195,11 +205,12 @@ def loops_6():
     """
 
     wedge = []
+
     for i in range(10):
         across = [] 
         for j in range(i + 1):
-            across.append(j)
-        wedge = (across)
+            across.append(str(j))
+        wedge.append(across)
     return wedge
 
 
