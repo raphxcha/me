@@ -26,64 +26,44 @@ def advancedGuessingGame():
     purpose if you can!
     """
     print("\nWelcome to the guessing game!")
-    lowerBound = input("Enter an lowerbound: ")
-    upperBound = input("Enter an upperbound: ")
-    realnum = random.randint(lowerBound, upperBound)
+
+    while True:
+        lowerBound = input("Enter an lowerbound: ")
+        if type(lowerBound) != int:
+            print("Invalid Response - Enter an integer")
+        else:
+            break
+    while True:
+        upperBound = input("Enter an upper bound: ")
+        if type(upperBound) != int:
+            print("Invalid Response - Enter an integer")
+        else:
+            break
+
+    print("Enter a number betweem {}".format(lowerBound))
+    lowerBound = int(lowerBound)
+    print("and {}".format(upperBound))
+    upperBound = int(upperBound)
+
+    actualNumber = random.randint(lowerBound, upperBound)
+
     guessed = False
 
     while not guessed:
-        a = False
-        while a != True:
-            guessed = input("Guess a number: ")
-            try:
-                int(guessed)
-                answer = True
-            except ValueError:
-                answer = False
-                print("Invalid Response - Integer Only, try again: ")
-            print("You guessed {},".format(realnum))
-            if int(guessed) == realnum:
-                print("It was {}!".format(realnum))
+        try:
+            guessedNumber = int(input("Guess a number: "))
+            print("You've guessed {},".format(guessedNumber),)
+            if guessedNumber == actualNumber:
+                print("It was {}" .formay(actualNumber))
                 guessed = True
-            elif int(guessed) < realnum and int(guessed) > lowerBound:
-                print("Too low!")
-            elif int(guessed) > realnum and int(guessed) < upperBound:
-                print("Too high!")
-            elif int(guessed) < lowerBound:
-                print("That's still too low!")
-            elif int(guessed) > upperBound:
-                print("That's still too low!")
-
-    x = False
-    z = ValueError
-
-    while x == False:
-        y = False
-        while y != True:
-            lowerBound = input("Guess a smaller number: ")
-            try:
-                int(lowerBound)
-                y = True
-            except z:
-                print("Invalid Response - Integer Only, try again: ")
-                y = False
-            y1 = False
-            while y1 != True:
-                upperBound = input("Guess a higher number: ")
-                if upperBound > lowerBound:
-                    try:
-                        int(upperBound)
-                        x = True
-                        y1 = True
-                    except z:
-                        print("Invalid Response - Integer Only, try again: ")
-                        upperBound = input("Guess a higher number: ")
-                        y1 = False
-                    else:
-                        print("Guess lower, not higher!")
-                        y1 = False
-                print("Guess a number between" + str(lowerBound) + "and" + str(upperBound))
-    
+            if guessedNumber < actualNumber:
+                print("Too small, try again: '(")
+            if guessedNumber > actualNumber:
+                print("Too big, try again: '(")
+            if guessedNumber > upperBound or guessedNumber < lowerBound:
+                print("Invalid Response - Enter a number within the given range. ")
+        except:
+            print("Enter an Integer.") 
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
