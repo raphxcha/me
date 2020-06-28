@@ -29,16 +29,23 @@ def advancedGuessingGame():
 
     while True:
         lowerBound = input("Enter an lowerbound: ")
-        if type(lowerBound) != int:
-            print("Invalid Response - Enter an integer")
-        else:
+        try:
+            lowerBound = int(lowerBound)
             break
+        except:
+            print("Invalid Response - Enter an integer")
     while True:
         upperBound = input("Enter an upper bound: ")
-        if type(upperBound) != int:
-            print("Invalid Response - Enter an integer")
-        else:
+        try: 
+            upperBound = int(upperBound)
             break
+        except:
+            print("Invalid Response - Enter an integer")
+
+    if lowerBound > upperBound:
+        swap = lowerBound
+        upperBound = lowerBound
+        upperBound = swap
 
     print("Enter a number betweem {}".format(lowerBound))
     lowerBound = int(lowerBound)
@@ -52,19 +59,17 @@ def advancedGuessingGame():
     while not guessed:
         try:
             guessedNumber = int(input("Guess a number: "))
-            print("You've guessed {},".format(guessedNumber),)
             if guessedNumber == actualNumber:
-                print("It was {}" .formay(actualNumber))
-                guessed = True
+                return "You got it!"
             if guessedNumber < actualNumber:
-                print("Too small, try again: '(")
+                print("Too small, try again: ")
             if guessedNumber > actualNumber:
-                print("Too big, try again: '(")
+                print("Too big, try again: ")
             if guessedNumber > upperBound or guessedNumber < lowerBound:
                 print("Invalid Response - Enter a number within the given range. ")
+                break
         except:
             print("Enter an Integer.") 
-    return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
 
