@@ -42,23 +42,22 @@ def advancedGuessingGame():
         except:
             print("Invalid Response - Enter an integer")
 
+    print(f"{lowerBound}, {upperBound}")
+
     if lowerBound > upperBound:
         swap = lowerBound
         upperBound = lowerBound
         upperBound = swap
-
-    print("Enter a number betweem {}".format(lowerBound))
-    lowerBound = int(lowerBound)
-    print("and {}".format(upperBound))
-    upperBound = int(upperBound)
+    print(f"{lowerBound}, {upperBound}")
 
     actualNumber = random.randint(lowerBound, upperBound)
-
+    print(actualNumber)
     guessed = False
 
     while not guessed:
         try:
             guessedNumber = int(input("Guess a number: "))
+            
             if guessedNumber == actualNumber:
                 return "You got it!"
             if guessedNumber < actualNumber:

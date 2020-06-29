@@ -99,6 +99,20 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
+    import random
+
+    isnumber = 0 
+
+    while isnumber == 0:
+        num = input("Return a number: ")
+        try:
+            val = int(num)
+            if num < high and num > low:
+                return num
+            notguessed = 0
+        
+        except:
+            print("This is not a valid number")
     
     return None
 
