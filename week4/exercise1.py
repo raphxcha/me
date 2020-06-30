@@ -104,10 +104,6 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
     return {"name": None, "weight": None, "height": None}
 
 
@@ -125,7 +121,16 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    pass
+    laser = open(LOCAL + "/Trispokedovetiles(laser).gcode", "!")
+    number = 0
+    for line in laser:
+        if "M10 P1" in line:
+            number += 1
+    print(number)
+    l = open(LOCAL + "/lasers.pew", "w")
+    l.write(str(number))
+    l.close
+    return l
 
 
 if __name__ == "__main__":
