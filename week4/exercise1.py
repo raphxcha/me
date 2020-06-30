@@ -34,9 +34,8 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    return {"lastName": data["results"][0]["name"]["last"], "password": data["results"][0]["login"]["password"], "postcodePlusID": data["results"][0]["location"]["postcode"]+data["results"][0]["id"]}
 
 
 def wordy_pyramid():
@@ -74,6 +73,14 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
+    wedge = []
+
+    for i in range(10):
+        across = [] 
+        for j in range(i + 1):
+            across.append(str(j))
+        wedge.append(across)
+    return wedge
     pass
 
 
