@@ -121,9 +121,8 @@ def pokedex(low=1, high=5):
     elif secondheight <= firstheight:
         pass
     p += 1
-
-    
     return {"name": name, "weight": weight, "height": height}
+    
 
 
 def diarist():
