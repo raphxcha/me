@@ -35,8 +35,7 @@ def get_some_details():
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
     data = json.loads(json_data)
-    return {"lastName": data["results"][0]["name"]["last"], "password": data["results"][0]["login"]["password"], "postcodePlusID": data["results"][0]["location"]["postcode"]+data["results"][0]["id"]}
-
+    return {"lastName": data["results"][0]["name"]["last"], "password": data["results"][0]["login"]["password"], "postcodePlusID": data["results"][0]["location"]["postcode"] + int(data["results"][0]["id"])}
 
 def wordy_pyramid():
     """Make a pyramid out of real words.
@@ -73,15 +72,23 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    wedge = []
+    
+    import requests 
+    url = "https://api.jsonbin.io/b/5efb49c80bab551d2b695e3d"
+    headers = {
+        'Content-Type': 'application/json',
+        'secret-key': '$2b$10$ZCcnMw4WIyM2wdZLbHjXxOyahx4jd.JUURK0ZcKrrZytFQ4RA6Pcy'
+        }
+    r = requests.get(url, headers=headers)
+    u = []
+    for i in range (1,19):
+        data = json.loads(r)
+        s = (data["bin"][0]["word{t}".format(t=i)])
+        u.append(s)
 
-    for i in range(10):
-        across = [] 
-        for j in range(i + 1):
-            across.append(str(j))
-        wedge.append(across)
-    return wedge
-    pass
+    return u
+
+
 
 
 def pokedex(low=1, high=5):
