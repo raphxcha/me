@@ -88,9 +88,6 @@ def wordy_pyramid():
     return u
 
 
-
-
-
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
 
