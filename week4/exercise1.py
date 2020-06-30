@@ -74,7 +74,7 @@ def wordy_pyramid():
     """
     
     import requests 
-    url = "https://api.jsonbin.io/b/5efb49c80bab551d2b695e3d"
+    url = "https://api.jsonbin.io/b/5efb49c80bab551d2b695e3d/2"
     headers = {
         'Content-Type': 'application/json',
         'secret-key': '$2b$10$ZCcnMw4WIyM2wdZLbHjXxOyahx4jd.JUURK0ZcKrrZytFQ4RA6Pcy'
@@ -82,11 +82,11 @@ def wordy_pyramid():
     r = requests.get(url, headers=headers)
     u = []
     for i in range (1,19):
-        data = json.loads(r)
-        s = (data["bin"][0]["word{t}".format(t=i)])
+        data = r.json()
+        s = (data["bin"][0]["word{t}".format(t=(i))])
         u.append(s)
     return u
-    
+
 
 
 
