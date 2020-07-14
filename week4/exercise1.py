@@ -106,21 +106,20 @@ def pokedex(low=1, high=5):
     firstheight = 0
     poke = []
     for p in range(low, high):
-        www = template.format(id=p)
-        a = requests.get(www)
+        url = template.format(id=p)
+        a = requests.get(url)
         if a.status_code is 200:
             json = json.loads(a.text)
             poke.append(json)
     
-    secondheight = json["Height"]
-    if secondheight > firstheight:
-        firstheight = secondheight
-        name = json["Name"]
-        weight = json["Weight"]
-        height = json["Height"]
-    elif secondheight <= firstheight:
-        pass
-    p += 1
+    for b in poke:
+        heightnow =  b["height"]
+        if heightnow > firstheight:
+            firstheight > heightnow
+            name = b["name"]
+            weight = b["weight"]
+            height = b["height"]
+
     return {"name": name, "weight": weight, "height": height}
     
 
@@ -139,16 +138,18 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    laser = open(LOCAL + "/Trispokedovetiles(laser).gcode", "!")
+    lasers = open(LOCAL + "/Trispokedovetiles(laser).gcode", "r")
     number = 0
-    for line in laser:
+    for line in lasers:
         if "M10 P1" in line:
             number += 1
+
     print(number)
-    l = open(LOCAL + "/lasers.pew", "w")
-    l.write(str(number))
-    l.close
-    return l
+
+    i= open(LOCAL + "/lasers.pew", "w")
+    i.write(str(number))
+    i.close
+    return i
 
 
 if __name__ == "__main__":
