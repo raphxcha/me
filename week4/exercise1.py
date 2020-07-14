@@ -103,24 +103,30 @@ def pokedex(low=1, high=5):
          variable and then future access will be easier.
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
+
     firstheight = 0
-    poke = []
-    for p in range(low, high):
-        url = template.format(id=p)
-        a = requests.get(url)
-        if a.status_code is 200:
-            json = json.loads(a.text)
-            poke.append(json)
-    
-    for b in poke:
-        heightnow =  b["height"]
-        if heightnow > firstheight:
-            firstheight > heightnow
-            name = b["name"]
-            weight = b["weight"]
-            height = b["height"]
+    pokemon = []
+    for i in range(low, high):
+
+        url = template.format(id=1)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            pokemon.append(the_json)
+
+        secondheight = the_json["height"]
+        if secondheight > firstheight:
+            firstheight = secondheight
+            name = the_json["name"]
+            weight = the_json["weight"]
+            height = the_json["height"]
+
+        elif firstheight <= secondheight:
+            pass
+        i += 1
 
     return {"name": name, "weight": weight, "height": height}
+    
     
 
 
@@ -143,9 +149,7 @@ def diarist():
     for line in lasers:
         if "M10 P1" in line:
             number += 1
-
-    print(number)
-
+        print(number)
     i= open(LOCAL + "/lasers.pew", "w")
     i.write(str(number))
     i.close
