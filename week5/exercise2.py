@@ -144,6 +144,7 @@ def draw_koch(drawing_method, steps_deep=4):
     Docs for python turtles here.
     https://docs.python.org/3/library/turtle.html
     """
+    
     raphael = turtle.Turtle()
     raphael.speed(1000)
     raphael.penup()
