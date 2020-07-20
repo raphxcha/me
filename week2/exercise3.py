@@ -34,6 +34,7 @@ def fix_it(moves=True, should_move=True):
         return("Duct Tape")
     elif not moves and should_move:
         return("WD-40")
+    #not true = not move = false
 
 
 def loops_1a():
