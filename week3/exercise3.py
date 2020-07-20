@@ -44,7 +44,7 @@ def advancedGuessingGame():
 
     print(f"{lowerBound}, {upperBound}")
 
-    if lowerBound > upperBound:
+    if lowerBound >= upperBound:
         swap = lowerBound
         upperBound = lowerBound
         upperBound = swap

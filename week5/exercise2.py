@@ -91,6 +91,17 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
+    part = source.split(" ")
+    results = list(map(apply_rules, part))
+    newstring = " ".join(results)
+    guard -= 1
+    if guard > 0:
+        return apply_rules(newstring, guard)
+    else:
+        return newstring
+
+
+
     def apply_rules(letter, guard):
         """Control the substitution.
 
