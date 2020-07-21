@@ -165,12 +165,22 @@ def square_koch(t, order, size):
     """
     trace = ""
     # write the rest of the function here.
+    
     return str(order) + trace
     pass
 
 
 def draw_square(steps=4):
     """Helper function to make testing easier."""
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+    turtle.forward(50)
+    turtle.left(90)
+
     return draw_koch(drawing_method=square_koch, steps_deep=steps)
 
 
