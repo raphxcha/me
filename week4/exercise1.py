@@ -72,19 +72,46 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    
+    """Make a pyramid out of real words.
+    There is a random word generator here:
+    https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=20
+    The generator takes a single argument, length (`wordlength`) of the word.
+    Visit the above link as an example.
+    Use this and the requests library to make a word pyramid. The shortest
+    words they have are 3 letters long and the longest are 20. The pyramid
+    should step up by 2 letters at a time.
+    Return the pyramid as a list of strings.
+    I.e. ["cep", "dwine", "tenoner", ...]
+    [
+    "cep",
+    "dwine",
+    "tenoner",
+    "ectomeric",
+    "archmonarch",
+    "phlebenterism",
+    "autonephrotoxin",
+    "redifferentiation",
+    "phytosociologically",
+    "theologicohistorical",
+    "supersesquitertial",
+    "phosphomolybdate",
+    "spermatophoral",
+    "storiologist",
+    "concretion",
+    "geoblast",
+    "Nereis",
+    "Leto",
+    ]
+    TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
+    """
     import requests 
-    url = "https://api.jsonbin.io/b/5efb49c80bab551d2b695e3d/2"
-    headers = {
-        'Content-Type': 'application/json',
-        'secret-key': '$2b$10$ZCcnMw4WIyM2wdZLbHjXxOyahx4jd.JUURK0ZcKrrZytFQ4RA6Pcy'
-        }
-    r = requests.get(url, headers=headers)
+    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=20"
+
+    r = requests.get(url)
     u = []
     for i in range (1,19):
-        data = r.json()
-        s = (data["bin"][0]["word{t}".format(t=(i))])
-        u.append(s)
+        data = r.text
+        u.append(data)
     return u
 
 
@@ -102,13 +129,13 @@ def pokedex(low=1, high=5):
          get very long. If you are accessing a thing often, assign it to a
          variable and then future access will be easier.
     """
-    template = "https://pokeapi.co/api/v2/pokemon/{id}"
+
 
     firstheight = 0
     pokemon = []
     for i in range(low, high):
 
-        url = template.format(id=1)
+        url = f"https://pokeapi.co/api/v2/pokemon/{i}"
         r = requests.get(url)
         if r.status_code is 200:
             the_json = json.loads(r.text)
@@ -123,7 +150,6 @@ def pokedex(low=1, high=5):
 
         elif firstheight <= secondheight:
             pass
-        i += 1
 
     return {"name": name, "weight": weight, "height": height}
     
