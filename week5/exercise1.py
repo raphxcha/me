@@ -62,18 +62,23 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
-    pass
+    """Calculate Hypotenuse of a right angle triangle."""
+    return math.sqrt(base ** 2 + height ** 2) #** is a power
 
 
 def calculate_area(base, height):
-    pass
+    """Calculate the area of a triangle"""
+    return base * height / 2
 
 
 def calculate_perimeter(base, height):
-    pass
+    """The sum of the base, height and hypotenuse.
+
+    For right triangles only."""
+    return base + height + calculate_hypotenuse(base, height)
 
 
-def calculate_aspect(base, height):
+def calculate_aspect(base, height): #3 aspects = wide tall equal
     pass
 
 
@@ -142,6 +147,9 @@ def tell_me_about_this_right_triangle(facts_dictionary):
 
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
+    dictionary_of_triangle_facts = get_triangle_Facts(base, height)
+
+    diagram = diagram_this_triangle(dictionary_of_triangle_facts)
     if return_diagram and return_dictionary:
         return None
     elif return_diagram:
