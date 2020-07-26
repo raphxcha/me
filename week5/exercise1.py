@@ -20,11 +20,6 @@ you'll need to figure out for yourself what to do.
 # much better job of what it's trying to do. Once you've has a little look,
 # move on, and eventually delete this function. (And this comment!)
 
-
-
-def countdown(message, start, stop, completion_message):
-    pass
-
     triangle = {"base": 3, "height": 4}
     triangle["hypotenuse"] = triangle["base"] ** 2 + triangle["height"] ** 2
     print("area = " + str((triangle["base"] * triangle["height"]) / 2))
@@ -43,10 +38,10 @@ def countdown(message, start, stop, completion_message):
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    list = ["Getting ready to start in 3", "Getting ready to start in 2", "Getting ready to start in 1", "Let's go!"]
-    for element in list:
-    print(element)
-    return countdown
+    while start >= stop:
+        print(message + " " + str(start))
+        start -= 1
+    print(completion_message)
 
 # TRIANGLES
 
@@ -75,7 +70,12 @@ def calculate_perimeter(base, height):
 
 
 def calculate_aspect(base, height): #3 aspects = wide tall equal
-    pass
+    if base > height:
+        return "wide"
+    elif base == height:
+        return "equal"
+    else:
+        return "tall"
 
 
 # Make sure you reuse the functions you've already got
