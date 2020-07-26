@@ -20,19 +20,19 @@ you'll need to figure out for yourself what to do.
 # much better job of what it's trying to do. Once you've has a little look,
 # move on, and eventually delete this function. (And this comment!)
 
-    triangle = {"base": 3, "height": 4}
-    triangle["hypotenuse"] = triangle["base"] ** 2 + triangle["height"] ** 2
-    print("area = " + str((triangle["base"] * triangle["height"]) / 2))
-    print("side lengths are:")
-    print("base: {}".format(triangle["base"]))
-    print("height: {}".format(triangle["height"]))
-    print("hypotenuse: {}".format(triangle["hypotenuse"]))
+    #triangle = {"base": 3, "height": 4}
+    #triangle["hypotenuse"] = triangle["base"] ** 2 + triangle["height"] ** 2
+    #print("area = " + str((triangle["base"] * triangle["height"]) / 2))
+    #print("side lengths are:")
+    #print("base: {}".format(triangle["base"]))
+    #print("height: {}".format(triangle["height"]))
+    #print("hypotenuse: {}".format(triangle["hypotenuse"]))
 
-    another_hyp = 5 ** 2 + 6 ** 2
-    print(another_hyp)
+    #another_hyp = 5 ** 2 + 6 ** 2
+    #print(another_hyp)
 
-    yet_another_hyp = 40 ** 2 + 30 ** 2
-    print(yet_another_hyp)
+    #yet_another_hyp = 40 ** 2 + 30 ** 2
+    #print(yet_another_hyp)
 
 
 # return a list of countdown messages, much like in the bad function above.
@@ -54,7 +54,8 @@ def countdown(message, start, stop, completion_message):
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
     """Calculate Hypotenuse of a right angle triangle."""
-    return math.sqrt(base ** 2 + height ** 2) #** is a power
+    hypotenuse = (base**2 + height**2)**(1/2)
+    return hypotenuse #** is a power
 
 
 def calculate_area(base, height):
@@ -82,13 +83,13 @@ def calculate_aspect(base, height): #3 aspects = wide tall equal
 # Don't reinvent the wheel
 def get_triangle_facts(base, height, units="mm"):
     return {
-        "area": None,
-        "perimeter": None,
-        "height": None,
-        "base": None,
-        "hypotenuse": None,
-        "aspect": None,
-        "units": None,
+        "area": calculate_area(base, height),
+        "perimeter": calculate_perimeter(base, height),
+        "height": height,
+        "base": base,
+        "hypotenuse": calculate_hypotenuse(base, height),
+        "aspect": calculate_aspect(base, height),
+        "units": units,
     }
 
 
@@ -139,19 +140,34 @@ def tell_me_about_this_right_triangle(facts_dictionary):
         "This is a {aspect} triangle.\n"
     )
 
-    facts = pattern.format(**facts_dictionary)
-
+    pattern = (
+        "The triangle is {area}{units}²\n"
+        "It has a perimeter of {perimeter}{units}\n"
+        "This is a {aspect} triangle.\n"
+    ).format(area=facts_dictionary["area"], 
+            units=facts_dictionary["units"],
+            aspect=facts_dictionary["aspect"],
+            perimeter=facts_dictionary["perimeter"])
+    if facts_dictionary["aspect"] == "tall":
+        return tall + pattern
+    elif facts_dictionary["aspect"] == "equal":
+        return equal + pattern
+    else:
+        return wide+pattern
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
-    dictionary_of_triangle_facts = get_triangle_Facts(base, height)
-
-    diagram = diagram_this_triangle(dictionary_of_triangle_facts)
+    dictionary = get_triangle_facts(base, height)
+    diagram = tell_me_about_this_right_triangle(dictionary)
     if return_diagram and return_dictionary:
-        return None
+        print(dictionary)
+        print(diagram)
+        return {"diagram": diagram, "dictionary": dictionary}
     elif return_diagram:
-        return None
+        print(diagram)
+        return diagram
     elif return_dictionary:
-        return None
+        print(dictionary)
+        return dictionary
     else:
         print("You're an odd one, you don't want anything!")
 
