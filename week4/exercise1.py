@@ -104,15 +104,22 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
-    import requests 
-    url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=20"
+    #import requests 
+    #url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=20"
 
-    r = requests.get(url)
-    u = []
-    for i in range (1,19):
-        data = r.text
-        u.append(data)
-    return u
+    wordy_pyramid = []
+    i = 3
+    for i in range(3, 20, 2): 
+        response = requests.get(f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}")
+        print(response.text)
+        wordy_pyramid.append(response.text)
+
+    for i in range(20, 2, -2):
+        response = requests.get(f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}")
+        print(response.text)
+        wordy_pyramid.append(response.text)
+        
+    return wordy_pyramid
 
 
 def pokedex(low=1, high=5):
