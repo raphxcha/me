@@ -202,7 +202,6 @@ def wordy_pyramid(api_key):
 def get_a_word_of_length_n(length):
     import requests
     urll:"https://us-central1-waldenpondpress.cloudfunctions.net/"
-        "give_me_a_word?wordlength={length}
 
 def list_of_words_with_lengths(list_of_lengths):
     import requests
