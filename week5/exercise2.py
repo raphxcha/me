@@ -109,17 +109,26 @@ def abba(source="abba", guard=3):
 
         Hint: when guard == -1 return the letter.
         """
+        
         if letter == "a":
-            return "a"
+            return "bba"
         elif letter == "b":
-            return "b"
+            return "aob"
         elif letter == "o":
-            return "o"
+            return "oa"
         else:
             return letter
 
     # write the rest of the function here
-    pass
+    part_new = list(source)
+    # result = list(map(apply_rules, part_new, guard))
+    result = [apply_rules(part, guard) for part in part_new]
+    new_abba = "".join(result)
+    guard -= 1
+    if guard > 0:
+        return abba(new_abba, guard)
+    else:
+        return new_abba
 
 
 def koch(t, order, size):
@@ -163,15 +172,28 @@ def square_koch(t, order, size):
     Leave the turtle facing the same direction.
 
     """
-    trace = ""
-    # write the rest of the function here.
     
-    return str(order) + trace
-    pass
+    trace = ""
+    if order == 0:  
+        t.forward(size)
+    else:
+        trace += koch(t, order-1, size/3)   # Go 1/3 of the way
+        t.left(90)
+        trace += koch(t, order-1, size/3)
+        t.right(90)
+        trace += koch(t, order-1, size/3)
+        t.right(90)
+        trace += koch(t, order-1, size/3)
+        t.left(90)
+        trace += koch(t, order-1, size/3)
+    
+    return str(order) + trace  
 
 
 def draw_square(steps=4):
     """Helper function to make testing easier."""
+    import turtle
+
     turtle.forward(50)
     turtle.left(90)
     turtle.forward(50)
