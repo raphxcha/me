@@ -91,14 +91,15 @@ def abba(source="abba", guard=3):
     aobaobbbabbaoaaobbbaoaaobaobaobbba
                 and so on...
     """
-    part = source.split(" ")
-    results = list(map(apply_rules, part))
-    newstring = " ".join(results)
-    guard -= 1
-    if guard > 0:
-        return apply_rules(newstring, guard)
-    else:
-        return newstring
+    guard = int(guard)
+    for i in range(guard, 0, -1):
+         source = source.replace('o', '@')
+         source = source.replace('a', '$')
+         source = source.replace('b', '#')
+         source = source.replace('$', 'bba')
+         source = source.replace('#', 'aob')
+         source = source.replace('@', 'oa')
+    return source
 
 
 
@@ -110,25 +111,25 @@ def abba(source="abba", guard=3):
         Hint: when guard == -1 return the letter.
         """
         
-        if letter == "a":
+        if letter == "a": 
             return "bba"
-        elif letter == "b":
+        elif letter == "b": 
             return "aob"
-        elif letter == "o":
+        elif letter == "o": 
             return "oa"
         else:
             return letter
 
-    # write the rest of the function here
-    part_new = list(source)
-    # result = list(map(apply_rules, part_new, guard))
-    result = [apply_rules(part, guard) for part in part_new]
-    new_abba = "".join(result)
-    guard -= 1
-    if guard > 0:
-        return abba(new_abba, guard)
-    else:
-        return new_abba
+        # write the rest of the function here
+        part_new = list(source)
+        # result = list(map(apply_rules, part_new, guard))
+        result = [apply_rules(part, guard) for part in part_new]
+        new_abba = "".join(result)
+        guard -= 1
+        if guard > 0:
+            return abba(new_abba, guard)
+        else:
+            return new_abba
 
 
 def koch(t, order, size):
@@ -153,7 +154,6 @@ def draw_koch(drawing_method, steps_deep=4):
     Docs for python turtles here.
     https://docs.python.org/3/library/turtle.html
     """
-    
     raphael = turtle.Turtle()
     raphael.speed(1000)
     raphael.penup()
@@ -161,7 +161,6 @@ def draw_koch(drawing_method, steps_deep=4):
     raphael.pendown()
     trace = drawing_method(raphael, order=steps_deep, size=600)
     return trace
-
 
 def square_koch(t, order, size):
     r"""Draw a koch curve with a square rather than a triangular point.
@@ -172,38 +171,25 @@ def square_koch(t, order, size):
     Leave the turtle facing the same direction.
 
     """
-    
     trace = ""
-    if order == 0:  
+    if order == 0:          # The base case is just a straight line
         t.forward(size)
     else:
-        trace += koch(t, order-1, size/3)   # Go 1/3 of the way
+        trace += square_koch(t, order-1, size/3)   # Go 1/3 of the way
         t.left(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
         t.right(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
         t.right(90)
-        trace += koch(t, order-1, size/3)
+        trace += square_koch(t, order-1, size/3)
         t.left(90)
-        trace += koch(t, order-1, size/3)
-    
-    return str(order) + trace  
-
+        trace += square_koch(t, order-1, size/3)
+    return str(order) + trace
 
 def draw_square(steps=4):
     """Helper function to make testing easier."""
-    import turtle
-
-    turtle.forward(50)
-    turtle.left(90)
-    turtle.forward(50)
-    turtle.left(90)
-    turtle.forward(50)
-    turtle.left(90)
-    turtle.forward(50)
-    turtle.left(90)
-
     return draw_koch(drawing_method=square_koch, steps_deep=steps)
+
 
 
 def draw_pointy(steps=4):
