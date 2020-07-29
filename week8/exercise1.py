@@ -236,12 +236,30 @@ def fast_filler(number_of_words=200):
     If you get this one to work, you are a Very Good Programmer™!
     """
     import random
-    import json
     import os
+    import json
+    
+    filename = "dict_racey.json"
 
-    if os.path.isfile('dict_racey.json') == True:
-        data = json.loads('dict_racey.json')
-        return data
+    words =[]
+
+    if filename in os.listdir("week8"):
+        input = json.load(open("week8\dict_racey.json", "r"))
+        input = {int(a):b for a,b in input.items()}
+
+    else:
+        input = make_filler_text_dictionary()
+        newdict = json.dumps(input)
+        output = open("week8\dict_racey.json", "w")
+        output.write(newdict)
+
+    for s in range(number_of_words):
+        length = random.randint(3,6)
+        count = random.randint(0,2)
+        words.append(input[length][count].capitalize())     
+
+    filler_text = " ".join(words) + "."
+    return filler_text
 
     
 if __name__ == "__main__":
