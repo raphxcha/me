@@ -149,8 +149,8 @@ def best_letter_for_pets():
     """
     import string
     i=-1
-    alphabet = string.ascii_lowercase
-    listletters = list(alphabet)
+    letter = string.ascii_lowercase
+    listletters = list(letter)
     for n in range(len(listletters)):
         newletter = len(pet_filter(letter=listletters[n]))
         if newletter > i:
