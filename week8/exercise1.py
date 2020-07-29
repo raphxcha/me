@@ -238,11 +238,12 @@ def fast_filler(number_of_words=200):
     import random
     import json
     import os
+
+    if os.path.isfile('dict_racey.json') == True:
+        data = json.loads('dict_racey.json')
+        return data
+
     
-
-
-
-
 if __name__ == "__main__":
     print("string_please", type(string_please()) == str)
     print("list_please", type(list_please()) == list)
