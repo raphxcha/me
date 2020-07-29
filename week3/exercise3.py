@@ -28,9 +28,9 @@ def advancedGuessingGame():
     isnumber = 0
     print("\nWelcome to the guessing game!")
 
-    while isnumber == 0:   
-      upperBound = number("Enter an upper bound: ")
-      lowerBound = number("Enter an lower bound: ")
+    while isnumber == 0:
+      upperBound = input("Enter an upper bound: ")
+      lowerBound = input("Enter an lower bound: ")
       if upperBound < 1:
         print("Enter lower or equal to integer!")
       elif lowerBound >= upperBound:
@@ -67,13 +67,13 @@ def advancedGuessingGame():
         print("This is not a valid number")
 
     def get_good_number(message):
-    while True:
-        inputnum = input(message)
-    try:
-      inputnum = int(inputnum)
-      return inputnum
-    except:
-      print(f"{inputnum} This is not a valid number")
+      while True:
+          inputnum = input(message)
+      try:
+        inputnum = int(inputnum)
+        return inputnum
+      except:
+        print(f"{inputnum} This is not a valid number")
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
 

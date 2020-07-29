@@ -6,5 +6,5 @@ I'm getting a lot of anxiety from these.
 I don't understand how to fix my errors.
 # #for notes
 Loops were cool
-boolean: true + false if, else, elif ==, =, %= creating a list append = add a single item to an existing list using a range = return sequence of numbers using expressions
+boolean: true + false if, else, elif ==, =, %= creating a list append = add a single item to an existing list = sequence of numbers using expressions
 
