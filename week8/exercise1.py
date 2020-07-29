@@ -255,11 +255,11 @@ def fast_filler(number_of_words=200):
 
     for s in range(number_of_words):
         length = random.randint(3,6)
-        count = random.randint(0,2)
-        words.append(input[length][count].capitalize())     
+        numm = random.randint(0,2)
+        words.append(input[length][numm].capitalize())     
 
-    filler_text = " ".join(words) + "."
-    return filler_text
+    text = " ".join(words) + "."
+    return text
 
     
 if __name__ == "__main__":
