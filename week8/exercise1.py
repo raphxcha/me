@@ -149,14 +149,14 @@ def best_letter_for_pets():
     """
     import string
     i=-1
-    the_alphabet = string.ascii_lowercase
-    list_letters = list(the_alphabet)
-    for n in range(len(list_letters)):
-        new_letter = len(pet_filter(letter=list_letters[n]))
-        if new_letter > i:
-            i = new_letter
-            popular_letter = list_letters[n]
-    return popular_letter
+    alphabet = string.ascii_lowercase
+    listletters = list(alphabet)
+    for n in range(len(listletters)):
+        newletter = len(pet_filter(letter=listletters[n]))
+        if newletter > i:
+            i = newletter
+            popularletter = listletters[n]
+    return popularletter
 
 
 def make_filler_text_dictionary():
@@ -193,8 +193,8 @@ def make_filler_text_dictionary():
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={ID}"
     for i in range(3):
         for dicts in range(3,8):
-            word_api = url.format(base=url, ID=dicts)
-            r = requests.get(word_api)
+            api = url.format(base=url, ID=dicts)
+            r = requests.get(api)
             if r.status_code is 200:
                 wd.setdefault(dicts, [])
                 wd[dicts].append(r.text)
