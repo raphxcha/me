@@ -29,8 +29,8 @@ def advancedGuessingGame():
     print("\nWelcome to the guessing game!")
 
     while isnumber == 0:
-      upperBound = input("Enter an upper bound: ")
-      lowerBound = input("Enter an lower bound: ")
+      upperBound = int(input("Enter an upper bound: "))
+      lowerBound = int(input("Enter an lower bound: "))
       if upperBound < 1:
         print("Enter lower or equal to integer!")
       elif lowerBound >= upperBound:
