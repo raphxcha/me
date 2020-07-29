@@ -25,55 +25,59 @@ def advancedGuessingGame():
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
     """
-    isnumber = 0
     print("\nWelcome to the guessing game!")
+    print("A number between _ and _ ?")
+    upperBound = False
+    while type(upperBound) is not int:
+        try:
+            upperBound=int(input("Enter an upper bound value: "))
+        except ValueError:
+            print('This is not an integer!')
 
-    while isnumber == 0:
-      upperBound = int(input("Enter an upper bound: "))
-      lowerBound = int(input("Enter an lower bound: "))
-      if upperBound < 1:
-        print("Enter lower or equal to integer!")
-      elif lowerBound >= upperBound:
-        print(f"{lowerBound} {upperBound} Enter lower range!")
-        x = lowerBound
+    lowerBound = False
+    while type(lowerBound) is not int:
+        try:
+            lowerBound = int(input("Enter a lower bound value: "))
+        except ValueError:
+            print('This is not an integer!')
+
+    upperBound = int(upperBound)
+    lowerBound = int(lowerBound)
+
+    if lowerBound > upperBound:
+        temp = lowerBound
         lowerBound = upperBound
-        upperBound = x
-        isnumber = 1
-      else:
-        isnumber = 1
+        upperBound = temp
+        print('Please pick a number between the bounds')
 
-    print(f"OK then, a number between {lowerBound}" + f" and {upperBound} ?")
+    print("Pick a number between " + str(lowerBound) + " and {} ?".format(upperBound))    
+
     actualNumber = random.randint(lowerBound, upperBound)
-    print(f"actualnumber {actualNumber}")
 
-    while isnumber == 1:
-      guessedNumber = input("Now guess a number between the range!: ")
-      try:
-        guessedNumber = int(guessedNumber)
-        if guessedNumber > upperBound or guessedNumber < lowerBound:
-          print("OUTSIDE THE BOUNDS CHOOSE AGAIN")
+    guessed = False
+
+    while not guessed:
+        guessedNumber = False
+        while type(guessedNumber) is not int:
+            try:
+                guessedNumber = int(input("Guess a number: "))
+            except ValueError:
+                print('Please try again with an integer')
+
+        print("You guessed {},".format(guessedNumber),)
+        if guessedNumber == actualNumber:
+            print('You got it!')
+            guessed = True
+        elif guessedNumber < actualNumber:
+            print("Too small, try again")
         else:
-          print(f"You guessed {guessedNumber}")
-          if guessedNumber == actualNumber:
-            print("You got it!! It was {}".format(actualNumber))
-            return "You got it!"
-            isnumber = 0
-          elif guessedNumber < actualNumber:
-            print("Too small, try again :'(")
-          else:
-            print("Too big, try again :'(")
-        
-      except:
-        print("This is not a valid number")
+            print("Too big, try again")
+        if guessedNumber < lowerBound:
+            print('That is the lower bound try again please')
+        elif guessedNumber > upperBound:
+          print('That is the upper bound try again please')
+    return "You got it!"
 
-    def get_good_number(message):
-      while True:
-          inputnum = input(message)
-      try:
-        inputnum = int(inputnum)
-        return inputnum
-      except:
-        print(f"{inputnum} This is not a valid number")
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
 
