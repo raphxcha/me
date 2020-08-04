@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+My previous data set was causing my lots of problems to I made the executive decision to change my dataset to something I am more interested to work in. This new dataset has a fun story to tell. I am learning new different ways to create visuals and I cannot wait to show my progress
